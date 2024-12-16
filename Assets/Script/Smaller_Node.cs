@@ -2,17 +2,25 @@ using UnityEngine;
 
 public class SmallerNode : MonoBehaviour
 {
-    public Vector3 initialScale = new Vector3(7f, 7f, 1f); // 초기 스케일
-    public Vector3 targetScale = new Vector3(1f, 1f, 1f); // 목표 스케일
+    public Vector3 initialScale;
+    public Vector3 targetScale;
     public float shrinkSpeed;// 축소 속도
 
     public float start_scale;
     public float end_scale;
 
+    public AudioSource smallaudio;
+    private SpriteRenderer spriteRenderer;
+
+    private float creationTime;
+
     void Start()
     {
         // 초기 스케일 설정
         transform.localScale = initialScale;
+        smallaudio = gameObject.GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        creationTime = Time.time; // 생성 시각 기록
     }
 
     void Update()
@@ -32,9 +40,20 @@ public class SmallerNode : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("성공");
-                Destroy(gameObject);
+                float elapsedTime = Time.time - creationTime;
+                Debug.Log("Node 생존 시간: " + elapsedTime + "초");
+                //Debug.Log("성공");
+                smallaudio.Play();
+                MakeTransparent();
+                //Destroy(gameObject);
             }
         }
+    }
+
+    void MakeTransparent()
+    {
+        Color color = spriteRenderer.color;
+        color.a = 0f; // 알파 값을 0으로 설정하여 완전히 투명하게 만듦
+        spriteRenderer.color = color;
     }
 }
