@@ -17,7 +17,7 @@ public class TutorialInput : MonoBehaviour
     {
         tutorialEndButton.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene("example");
+            SceneManager.LoadScene("enemy");
         });
     }
     private void Start()

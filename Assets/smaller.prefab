@@ -104,8 +104,8 @@ MonoBehaviour:
   initialScale: {x: 16, y: 16, z: 1}
   targetScale: {x: 1, y: 1, z: 1}
   shrinkSpeed: 0.85
-  start_scale: 3.5
-  end_scale: 4.5
+  start_scale: 5.1
+  end_scale: 6.1
   smallaudio: {fileID: 329790205220201028}
 --- !u!82 &329790205220201028
 AudioSource:
