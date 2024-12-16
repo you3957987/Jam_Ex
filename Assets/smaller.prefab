@@ -106,7 +106,7 @@ MonoBehaviour:
   shrinkSpeed: 0.85
   start_scale: 3.5
   end_scale: 4.5
-  smallaudio: {fileID: 0}
+  smallaudio: {fileID: 329790205220201028}
 --- !u!82 &329790205220201028
 AudioSource:
   m_ObjectHideFlags: 0
