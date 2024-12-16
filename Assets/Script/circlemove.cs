@@ -8,6 +8,11 @@ public class CircleMove : MonoBehaviour
     public float maxMove = 1.5f; // 최대 회전 값 (한 바퀴 반)
     public float limitedMove; // 제한된 회전 값
 
+    private void Start()
+    {
+        Application.targetFrameRate = 60; // 프레임 속도를 60으로 고정
+    }
+
     void Update()
     {
         // 마우스 위치를 화면 좌표에서 월드 좌표로 변환

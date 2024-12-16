@@ -5,7 +5,8 @@ public class Node : MonoBehaviour
 {
     [SerializeField] private float fallSpeed = 1f; //떨어지는 속도
     public float destroyHeight = -6f;
-
+    public float top;
+    public float bottom;    
 
     void Update()
     {
@@ -18,7 +19,7 @@ public class Node : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(transform.position.y >= -1.7f && transform.position.y <= -0.6f)
+        if(transform.position.y >= bottom && transform.position.y <=  top)
         {
             if( Input.GetKeyDown(KeyCode.Q))
             {

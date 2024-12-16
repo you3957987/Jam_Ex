@@ -3,7 +3,7 @@ using UnityEngine;
 public class SmallerNode : MonoBehaviour
 {
     public Vector3 initialScale = new Vector3(7f, 7f, 1f); // 초기 스케일
-    public Vector3 targetScale = new Vector3(0.1f, 0.1f, 1f); // 목표 스케일
+    public Vector3 targetScale = new Vector3(1f, 1f, 1f); // 목표 스케일
     public float shrinkSpeed;// 축소 속도
 
     public float start_scale;
@@ -21,7 +21,7 @@ public class SmallerNode : MonoBehaviour
         transform.localScale = Vector3.Lerp(transform.localScale, targetScale, shrinkSpeed * Time.deltaTime);
 
         // 목표 스케일에 도달하면 오브젝트 삭제
-        if (transform.localScale.x <= targetScale.x && transform.localScale.y <= targetScale.y)
+        if (transform.localScale.x <= 1f)
         {
             Destroy(gameObject);
         }
