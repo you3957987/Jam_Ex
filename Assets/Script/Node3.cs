@@ -7,6 +7,15 @@ public class Node3 : MonoBehaviour
     public float top;
     public float bottom;
 
+    public AudioSource nodeaudio;
+    private SpriteRenderer spriteRenderer;
+
+    private void Start()
+    {
+        nodeaudio = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     void Update()
     {
         //아래로 떨어짐
@@ -22,11 +31,18 @@ public class Node3 : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.O))
             {
-                Destroy(gameObject);
+                nodeaudio.Play();
+                MakeTransparent();
                 Debug.Log("a");
             }
 
         }
 
+    }
+    void MakeTransparent()
+    {
+        Color color = spriteRenderer.color;
+        color.a = 0f; // 알파 값을 0으로 설정하여 완전히 투명하게 만듦
+        spriteRenderer.color = color;
     }
 }

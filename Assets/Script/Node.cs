@@ -1,3 +1,4 @@
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem.Processors;
 
@@ -6,7 +7,16 @@ public class Node : MonoBehaviour
     [SerializeField] private float fallSpeed = 1f; //떨어지는 속도
     public float destroyHeight = -6f;
     public float top;
-    public float bottom;    
+    public float bottom;
+
+    public AudioSource nodeaudio;
+    private SpriteRenderer spriteRenderer;
+
+    private void Start()
+    {
+        nodeaudio = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     void Update()
     {
@@ -23,12 +33,19 @@ public class Node : MonoBehaviour
         {
             if( Input.GetKeyDown(KeyCode.Q))
             {
-                Destroy(gameObject);
+                nodeaudio.Play();
+                MakeTransparent();
                 Debug.Log("a");
             }
            
         }
 
+    }
+    void MakeTransparent()
+    {
+        Color color = spriteRenderer.color;
+        color.a = 0f; // 알파 값을 0으로 설정하여 완전히 투명하게 만듦
+        spriteRenderer.color = color;
     }
 
 }

@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 122915973}
   - component: {fileID: 122915972}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: 2button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,7 +287,7 @@ Transform:
   m_GameObject: {fileID: 122915971}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: -1, z: 0}
+  m_LocalPosition: {x: -7, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -477,23 +477,25 @@ MonoBehaviour:
   circle_node_prefab: {fileID: 2733665872960504484, guid: f1c3018b79b53b64d830332474a132dd, type: 3}
   spawnTimes:
   - 2
+  - 3
+  - 5
+  - 7
+  - 1
   - 2
+  - 1
   - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  top: 23
+  x: -7
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +591,7 @@ GameObject:
   - component: {fileID: 856273265}
   - component: {fileID: 856273264}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: 3button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,24 +713,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circle_node_prefab: {fileID: 6722130739433261962, guid: 6324e88d274e63043af39b5652a861c9, type: 3}
   spawnTimes:
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  top: 20
+  x: 13
 --- !u!1 &1431203098
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +744,7 @@ GameObject:
   - component: {fileID: 1431203100}
   - component: {fileID: 1431203099}
   m_Layer: 0
-  m_Name: Square (3)
+  m_Name: 4button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -810,7 +814,7 @@ Transform:
   m_GameObject: {fileID: 1431203098}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: -1, z: 0}
+  m_LocalPosition: {x: 13, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1454,23 +1458,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circle_node_prefab: {fileID: 8003975281947282412, guid: 6508a54763eccda408beae734ff11ac5, type: 3}
   spawnTimes:
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
-  - 0
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  top: 20
+  x: 7
 --- !u!1 &2024640224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,7 +1488,7 @@ GameObject:
   - component: {fileID: 2024640226}
   - component: {fileID: 2024640225}
   m_Layer: 0
-  m_Name: Square
+  m_Name: 1button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1620,6 +1626,8 @@ MonoBehaviour:
   - 1
   - 1
   - 1
+  top: 20
+  x: -12
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
