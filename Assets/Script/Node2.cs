@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEditor.Tilemaps;
+using UnityEngine.InputSystem.Processors;
+using UnityEngine.UI;
 
 public class Node2 : MonoBehaviour
 {
@@ -11,6 +14,8 @@ public class Node2 : MonoBehaviour
 
     public AudioSource nodeaudio;
     private SpriteRenderer spriteRenderer;
+    
+    //FadeImage fade;
 
     private void Start()
     {
@@ -33,10 +38,18 @@ public class Node2 : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
+                //nodeaudio.Play();
+                MakeTransparent();
+                //Debug.Log("a");
+                //fade.OnDestroy();
+                OnNodeDestroyed?.Invoke();  //노드 파괴될 때 이벤트 호출
+            }
+
+            if (Mathf.Abs(transform.position.y - (bottom + top) / 2) < 0.1f && GameOverManager.devMode)
+            {
                 nodeaudio.Play();
                 MakeTransparent();
-                Debug.Log("a");
-                OnNodeDestroyed?.Invoke();  //노드 파괴될 때 이벤트 호출
+                OnNodeDestroyed?.Invoke();
             }
 
         }

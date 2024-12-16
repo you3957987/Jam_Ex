@@ -35,10 +35,17 @@ public class Node : MonoBehaviour
         {
             if( Input.GetKeyDown(KeyCode.Q))
             {
+                //nodeaudio.Play();
+                MakeTransparent();
+                //Debug.Log("a");
+                OnNodeDestroyed?.Invoke();  //노드 파괴될 때 이벤트 호출
+            }
+
+            if(Mathf.Abs(transform.position.y - (bottom + top) / 2) < 0.1f && GameOverManager.devMode)
+            {
                 nodeaudio.Play();
                 MakeTransparent();
-                Debug.Log("a");
-                OnNodeDestroyed?.Invoke();  //노드 파괴될 때 이벤트 호출
+                OnNodeDestroyed?.Invoke();
             }
            
         }

@@ -103,8 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallSpeed: 10
   destroyHeight: -6
-  top: 2.9
-  bottom: 1.4
+  top: 3
+  bottom: 1
   nodeaudio: {fileID: -4779702246002099758}
 --- !u!82 &-4779702246002099758
 AudioSource:
@@ -116,8 +116,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bd8a22832485be949856dd7965552c2e, type: 3}
-  m_Resource: {fileID: 8300000, guid: bd8a22832485be949856dd7965552c2e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 353de88d094b22447afa416b32be9c8f, type: 3}
+  m_Resource: {fileID: 8300000, guid: 353de88d094b22447afa416b32be9c8f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

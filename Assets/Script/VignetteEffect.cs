@@ -9,14 +9,30 @@ public class FadeImage : MonoBehaviour
 
     private float alphaValue = 0f;                 // 알파 값 초기화 (완전 투명)
 
+    //public static FadeImage Instance { get; private set; }
+
+    private void Awake()
+    {
+        //Instance = this;
+    }
+
     private void Start()
     {
         Node.OnNodeDestroyed += Node_OnNodeDestroyed;
+        Node2.OnNodeDestroyed += Node_OnNodeDestroyed; 
+        Node3.OnNodeDestroyed += Node_OnNodeDestroyed; 
+        Node4.OnNodeDestroyed += Node_OnNodeDestroyed;
+        SmallerNode.OnNodeDestroyed += Node_OnNodeDestroyed;
     }
 
-    private void OnDestroy()
+    public void OnDestroy()
     {
         Node.OnNodeDestroyed -= Node_OnNodeDestroyed;
+        Node2.OnNodeDestroyed -= Node_OnNodeDestroyed;
+        Node3.OnNodeDestroyed -= Node_OnNodeDestroyed;
+        Node4.OnNodeDestroyed -= Node_OnNodeDestroyed;
+        SmallerNode.OnNodeDestroyed -= Node_OnNodeDestroyed;
+
     }
 
     private void Node_OnNodeDestroyed()
@@ -24,7 +40,7 @@ public class FadeImage : MonoBehaviour
         // 노드 파괴 시 밝아짐 (알파 감소)
         alphaValue -= brightenAmount;
         alphaValue = Mathf.Clamp(alphaValue, 0f, 1f); // 알파 값 제한
-        //Debug.Log($"Node destroyed. Brightened alpha: {alphaValue}");
+        Debug.Log($"Node destroyed. Brightened alpha: {alphaValue}");
     }
 
     private void Update()

@@ -103,8 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallSpeed: 10
   destroyHeight: -6
-  top: -0.1
-  bottom: -1.6
+  top: 0
+  bottom: -2
   nodeaudio: {fileID: -506714317248601821}
 --- !u!82 &-506714317248601821
 AudioSource:

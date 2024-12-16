@@ -1,7 +1,12 @@
+using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.InputSystem.Processors;
 
 public class SmallerNode : MonoBehaviour
 {
+
+    public static event System.Action OnNodeDestroyed;  //이벤트 정의
+
     public Vector3 initialScale;
     public Vector3 targetScale;
     public float shrinkSpeed;// 축소 속도
@@ -29,7 +34,7 @@ public class SmallerNode : MonoBehaviour
         transform.localScale = Vector3.Lerp(transform.localScale, targetScale, shrinkSpeed * Time.deltaTime);
 
         // 목표 스케일에 도달하면 오브젝트 삭제
-        if (transform.localScale.x <= 1f)
+        if (transform.localScale.x <= 2f)
         {
             Destroy(gameObject);
         }
@@ -41,11 +46,19 @@ public class SmallerNode : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 float elapsedTime = Time.time - creationTime;
-                Debug.Log("Node 생존 시간: " + elapsedTime + "초");
+                //Debug.Log("Node 생존 시간: " + elapsedTime + "초");
                 //Debug.Log("성공");
+                //smallaudio.Play();
+                MakeTransparent();
+                OnNodeDestroyed?.Invoke();
+                //Destroy(gameObject);
+            }
+
+            if (Mathf.Abs(transform.localScale.x - (start_scale + end_scale) / 2) < 0.1f && Mathf.Abs(transform.localScale.y - (start_scale + end_scale) / 2) < 0.1f && GameOverManager.devMode)
+            {
                 smallaudio.Play();
                 MakeTransparent();
-                //Destroy(gameObject);
+                OnNodeDestroyed?.Invoke();
             }
         }
     }
