@@ -20,7 +20,7 @@ public class Node : MonoBehaviour
 
         if(transform.position.y >= -1.7f && transform.position.y <= -0.6f)
         {
-            if( Input.GetKeyDown(KeyCode.Space))
+            if( Input.GetKeyDown(KeyCode.Q))
             {
                 Destroy(gameObject);
                 Debug.Log("a");
