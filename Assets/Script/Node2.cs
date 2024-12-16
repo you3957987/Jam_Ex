@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Node2 : MonoBehaviour
 {
+    public static event System.Action OnNodeDestroyed; // 이벤트 정의
+
+
     [SerializeField] private float fallSpeed = 1f; //떨어지는 속도
     public float destroyHeight = -6f;
     public float top;
@@ -33,7 +36,8 @@ public class Node2 : MonoBehaviour
             {
                 nodeaudio.Play();
                 MakeTransparent();
-                Debug.Log("a");
+                Debug.Log("a"); 
+                OnNodeDestroyed?.Invoke();// 노드가 파괴될 때 이벤트 호출
             }
 
         }
